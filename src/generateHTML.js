@@ -1,3 +1,8 @@
+const Employee = require ('../lib/Employee')
+const Engineer = require ('../lib/Engineer')
+const Intern = require ('../lib/Intern')
+const Manager = require ('../lib/Manager')
+
 //Iterates through obj
 function iterator1(inputArr) {
     
@@ -19,17 +24,17 @@ function generateHTML(data) {
     </head>
     <header>
         <h1 class="bg-primary text-success text-center">Employee Information</h1>
-    </header>`
+    </header>
+    <body>`
     for (obj of data) {
-        if (obj.github) {
-            special = obj.github
-        } else if (obj.officeNum) {
-            special = obj.officeNum
-        } else if (obj.school) {
-            special = obj.school
+        if (obj.getRole()==='Engineer') {
+            special = obj.getGithub()
+        } else if (obj.getRole === 'Manager') {
+            special = obj.getOfficeNumber()
+        } else if (obj.getRole()=== 'Intern') {
+            special = obj.getSchool()
         }
-
-        htmlStr += `<div class="card">
+        htmlStr += `<div class="card bg-info text-center m-1">
             <h5 class="card-header">${obj.name}</h5>
             <div class="card-body">
                 <h5 class="card-title">${obj.getRole()}</h5>

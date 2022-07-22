@@ -41,7 +41,7 @@ const engineerQ = [
 const managerQ = [
     {
     type: "input",
-    message: "PLease enter your manager's office number:",
+    message: "Please enter your manager's office number:",
     name: "officeNum"
     }, 
 ] 
@@ -105,4 +105,7 @@ async function init() {
 };
 
 // Function call to initialize app
+obj = new Engineer ('nad','dfas','eaef', 'github')
+console.log(obj.getGithub())
+
 init();

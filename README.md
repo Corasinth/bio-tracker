@@ -22,6 +22,10 @@ To install, simply clone the repository and run an npm install.
 
 You can run this app by opening the index.js file with node.js or a similar program and following the inquirer prompts. 
 
+Below is a gif of the functionality.
+
+![alt text](./assets/images/demo-vid.gif)
+
 ## Credits
 
 This app makes use of both Inquirer and Jest (for testing).
