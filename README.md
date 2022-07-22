@@ -24,7 +24,7 @@ You can run this app by opening the index.js file with node.js or a similar prog
 
 Below is a gif of the functionality.
 
-![alt text](./assets/images/demo-vid.gif)
+![alt text](./lib/images/demo-vid.gif)
 
 ## Credits
 
