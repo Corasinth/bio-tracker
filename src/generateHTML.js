@@ -29,14 +29,15 @@ function generateHTML(data) {
     for (obj of data) {
         if (obj.getRole()==='Engineer') {
             special = obj.getGithub()
-        } else if (obj.getRole === 'Manager') {
+        } else if (obj.getRole() === 'Manager') {
             special = obj.getOfficeNumber()
         } else if (obj.getRole()=== 'Intern') {
             special = obj.getSchool()
         }
+        console.log(special)
         htmlStr += `<div class="card bg-info text-center m-1">
             <h5 class="card-header">${obj.name}</h5>
-            <div class="card-body">
+            <div class="card-body text-warning">
                 <h5 class="card-title">${obj.getRole()}</h5>
                 <h7 class="card-text">${obj.getName()}</h7>
                 <p class="card-text">${obj.getId()}</p>
