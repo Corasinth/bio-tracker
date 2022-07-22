@@ -22,12 +22,12 @@ describe ('employee', () => {
     }),
     
     describe ('getEmail', () => {
-       it ('should return the emloyees email', () => {
+       it ('should return the employee email', () => {
         expect(employee.getEmail()).toBe(employee.email);
        });
     }),
      describe ('getRole', () => {
-       it ('should return empployee', () => {
+       it ('should return employees role', () => {
         expect(employee.getRole()).toBe(employee.constructor.name);
        });
     });
