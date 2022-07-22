@@ -31,28 +31,35 @@ const questions = [
     name: "email"
     },
 ]
-engineerQ = [
+const engineerQ = [
     {
     type: "input",
     message: "PLease enter your engineer's github:",
     name: "github"
     }, 
 ] 
-managerQ = [
+const managerQ = [
     {
     type: "input",
     message: "PLease enter your manager's office number:",
     name: "officeNum"
     }, 
 ] 
-internQ = [
+const internQ = [
     {
     type: "input",
     message: "PLease enter your intern's school:",
     name: "school"
     }, 
 ] 
-
+const repeatQ = [
+    {
+        type: "confirm",
+        message: "Would you like to add another employee? y/n",
+        name: "repeat",
+        default: false
+    }
+]
 // Function to write README file
 async function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
@@ -60,8 +67,9 @@ async function writeToFile(fileName, data) {
     })
 };
 
-//  Function to initialize app
-async function init() {
+
+// function to ask questions
+async function askQuestions() {
     let data = await inquirer.prompt(questions);
     switch (data.type) {
         case "Engineer":
@@ -77,8 +85,23 @@ async function init() {
         var obj = new Intern (data.name, data.id, data.email, data1.school)
         break;
     }
-    let htmlString = generateHTML(obj);
+    return obj
+}
+
+//  Function to initialize app
+let objArray =[]
+async function init() {
+    let response = await askQuestions()
+    objArray.push(response)    
+
+    let repeat = await inquirer.prompt(repeatQ)
+    if (repeat.repeat === true) {
+       init()
+    } else {
+    let htmlString = generateHTML(objArray);
     writeToFile('./dist/index.html', htmlString)
+    objArray=[]
+    }
 };
 
 // Function call to initialize app

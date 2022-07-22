@@ -1,12 +1,10 @@
+//Iterates through obj
+function iterator1(inputArr) {
+    
+}
+// Creates HTML
 function generateHTML(data) {
-    let special 
-    if (data.github) {
-      special = data.github
-    } else if (data.officeNum) {
-      special = data.officeNum
-    } else if (data.school) {
-      special = data.school
-    }
+    let special
     let htmlStr = `<!DOCTYPE html>
     <html lang='en'>
     
@@ -21,23 +19,29 @@ function generateHTML(data) {
     </head>
     <header>
         <h1 class="bg-primary text-success text-center">Employee Information</h1>
-    </header>
-    
-    <body>
-        <div class="card">
-            <h5 class="card-header">${data.name}</h5>
+    </header>`
+    for (obj of data) {
+        if (obj.github) {
+            special = obj.github
+        } else if (obj.officeNum) {
+            special = obj.officeNum
+        } else if (obj.school) {
+            special = obj.school
+        }
+
+        htmlStr += `<div class="card">
+            <h5 class="card-header">${obj.name}</h5>
             <div class="card-body">
-                <h5 class="card-title">${data.getRole()}</h5>
-                <h7 class="card-text">${data.getName()}</h7>
-                <p class="card-text">${data.getId()}</p>
-                <p class="card-text">${data.getEmail()}</p>
+                <h5 class="card-title">${obj.getRole()}</h5>
+                <h7 class="card-text">${obj.getName()}</h7>
+                <p class="card-text">${obj.getId()}</p>
+                <p class="card-text">${obj.getEmail()}</p>
                 <p class="card-text">${special}</p>
             </div>
-        </div>
-    </body>
-    
-    </html>`
+        </div>`
+    }
+    htmlStr += `</body></html>`
     return htmlStr;
-  }
-  
-  module.exports = generateHTML;
+}
+
+module.exports = generateHTML;
