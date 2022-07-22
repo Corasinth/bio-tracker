@@ -1,12 +1,12 @@
 const Intern = require('../lib/intern')
+const intern = new Intern('Bob', 1, 'email@email', 'school');
 
 describe('intern', () => {
     describe('initialization', () => {
         it('should create a intern object if given the right arguments', () => {
-            const intern = new Intern('Bob', 1, 'email@email', 'school');
             expect(intern.name).toEqual('Bob');
             expect(intern.id).toEqual(1);
-            expect(intern.email).toEqual(1);
+            expect(intern.email).toEqual('email@email');
             expect(intern.school).toEqual('school');
         })
     })
@@ -18,7 +18,7 @@ describe('intern', () => {
 
     describe('getId', () => {
         it('should return the interns id', () => {
-            expect(intern.getEmail()).toBe(intern.id);
+            expect(intern.getId()).toBe(intern.id);
         });
     }),
 

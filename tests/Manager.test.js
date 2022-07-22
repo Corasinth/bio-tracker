@@ -1,13 +1,13 @@
 const Manager = require('../lib/manager')
+const manager = new Manager('Bob', 1, 'email@email', 22);
 
 describe('manager', () => {
     describe('initialization', () => {
         it('should create a manager object if given the right arguments', () => {
-            const manager = new Hanager('Bob', 1, 'email@email', '22');
             expect(manager.name).toEqual('Bob');
             expect(manager.id).toEqual(1);
-            expect(manager.email).toEqual(1);
-            expect(manager.officeNumber).toEqual('22');
+            expect(manager.email).toEqual('email@email');
+            expect(manager.officeNumber).toEqual(22);
         })
     })
     describe('getName', () => {
@@ -18,7 +18,7 @@ describe('manager', () => {
 
     describe('getId', () => {
         it('should return the managers id', () => {
-            expect(manager.getEmail()).toBe(manager.id);
+            expect(manager.getId()).toBe(manager.id);
         });
     }),
 

@@ -1,12 +1,12 @@
 const Engineer = require('../lib/Engineer')
+const engineer = new Engineer('Bob', 1, 'email@email', 'github username');
 
 describe('engineer', () => {
     describe('initialization', () => {
         it('should create a engineer object if given the right arguments', () => {
-            const engineer = new Engineer('Bob', 1, 'email@email', 'github username');
             expect(engineer.name).toEqual('Bob');
             expect(engineer.id).toEqual(1);
-            expect(engineer.email).toEqual(1);
+            expect(engineer.email).toEqual('email@email');
             expect(engineer.github).toEqual('github username');
         })
     })
@@ -18,7 +18,7 @@ describe('engineer', () => {
 
     describe('getId', () => {
         it('should return the engineers id', () => {
-            expect(engineer.getEmail()).toBe(engineer.id);
+            expect(engineer.getId()).toBe(engineer.id);
         });
     }),
 
