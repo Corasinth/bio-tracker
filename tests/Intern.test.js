@@ -29,7 +29,7 @@ describe('intern', () => {
     }),
     describe('getSchool', () => {
         it('should return interns school', () => {
-            expect(intern.getGithub()).toBe(intern.school);
+            expect(intern.getSchool()).toBe(intern.school);
         });
     });
 
