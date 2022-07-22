@@ -1,13 +1,4 @@
-function generateHTML(data) {
-    let special 
-    if (data.github) {
-      special = data.github
-    } else if (data.officeNum) {
-      special = data.officeNum
-    } else if (data.school) {
-      special = data.school
-    }
-    let htmlStr = `<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang='en'>
     
     <head>
@@ -25,19 +16,15 @@ function generateHTML(data) {
     
     <body>
         <div class="card">
-            <h5 class="card-header">${data.name}</h5>
+            <h5 class="card-header">dfa</h5>
             <div class="card-body">
-                <h5 class="card-title">${data.getRole()}</h5>
-                <h7 class="card-text">${data.getName()}</h7>
-                <p class="card-text">${data.getId()}</p>
-                <p class="card-text">${data.getEmail()}</p>
-                <p class="card-text">${special}</p>
+                <h5 class="card-title">Engineer</h5>
+                <h7 class="card-text">dfa</h7>
+                <p class="card-text">dadfa</p>
+                <p class="card-text">adsfasd</p>
+                <p class="card-text">dfa</p>
             </div>
         </div>
     </body>
     
-    </html>`
-    return htmlStr;
-  }
-  
-  module.exports = generateHTML;
+    </html>
