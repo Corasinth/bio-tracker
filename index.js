@@ -1,7 +1,7 @@
 //Packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateHTML = require("./src/generateHTML");
 
 // Array of questions for user input
 const questions = [ 
@@ -64,13 +64,13 @@ async function init() {
         var dataType = await inquirer.prompt(engineerQ);
         break;
         case "Manager":
-        var dataType = await inquirer.prompt(engineerQ);
+        var dataType = await inquirer.prompt(managerQ);
         break;
         case "Intern":
-        var dataType = await inquirer.prompt(engineerQ);
+        var dataType = await inquirer.prompt(internQ);
         break;
     }
-    let htmlString = generateMarkdown(data, dataType);
+    let htmlString = generateHTML(data, dataType);
     writeToFile('index.html', htmlString)
 };
 
